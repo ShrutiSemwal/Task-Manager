@@ -13,10 +13,11 @@
       "reminder": true
     },
     {
+      "id": 3,
       "text": "test",
       "day": "tuesday",
-      "reminder": true,
-      "id": 3
+      "reminder": true
+      
     }
   ]
 }

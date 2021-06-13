@@ -50,7 +50,7 @@ const addTask = async (task) =>{
    {
      method: 'POST',
      headers:{
-       'Content-type': 'application/json'
+       'Content-type': 'application/json',
      },
      body: JSON.stringify(task),
    })
@@ -70,14 +70,13 @@ const addTask = async (task) =>{
 //Delete task
 
 const deleteTask = async (id)=> {
-  await fetch(`http://localhost:5000/tasks/${id}`,
+  const res = await fetch(`http://localhost:5000/tasks/${id}`,
   {
-    method: 'DELETE'
+    method: 'DELETE',
   })
-
-
-
-  setTasks(tasks.filter((task) => task.id !== id))
+  res.status === 200
+      ? setTasks(tasks.filter((task) => task.id !== id))
+      : alert('Error Deleting This Task')
 }
 
 //Toggle Reminder
@@ -90,9 +89,9 @@ const toggleReminder = async (id) => {
   {
     method: 'PUT',
     headers: {
-      'Content-type': 'application/json'
+      'Content-type': 'application/json',
     },
-    body: JSON.stringify(updTask)
+    body: JSON.stringify(updTask),
   })
 
   const data =await res.json()
@@ -111,8 +110,11 @@ const toggleReminder = async (id) => {
       (
         <>
           {showAddTask && <AddTask onAdd={addTask} />}
-      {tasks.length> 0 ? <Tasks tasks={tasks}
-       onDelete={deleteTask} onToggle= {toggleReminder} /> : 
+      {tasks.length> 0 ? ( 
+      <Tasks 
+      tasks={tasks}
+       onDelete={deleteTask}
+        onToggle= {toggleReminder} /> ): 
        ('No Tasks to show!')}
         </>
       )} />

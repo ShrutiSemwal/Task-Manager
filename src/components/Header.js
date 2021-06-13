@@ -3,10 +3,7 @@ import {useLocation} from 'react-router-dom'
 import Button from './Button'
 
 const Header = ({title, onAdd, showAdd}) => {
-    // eslint-disable-next-line
-    const onClick=()=>{
-        console.log('Click')
-    }
+    
     const location = useLocation()
     return (
         <header className='header'>
