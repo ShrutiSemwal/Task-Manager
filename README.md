@@ -15,6 +15,25 @@ Run JSON server: (http://localhost:5000)
 
 ## Main
 
+![main](main.png)
+
+## Adding a Task
+
+![Writing a task](add.png)
+![Added](add1.png)
+
+## Deleting a Task
+
+![Deleting](delete.png)
+
+## Removing Reminder (Green Bar)
+
+![Reminder bar](reminder.png)
+
+## About app
+
+![About version](about.png)
+
 
 
 
